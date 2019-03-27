@@ -5,7 +5,7 @@ Before running circPipe, users should check if all the required tools
 and databases are available on the system(that is, either on the local
 machine or on the HPC facility).circPipe accepts raw reads, annotations
 and genome reference as input to process the whole pipeline. At present,
-we mainly focus on human genom.
+we mainly focus on human genom.Noteworthily, the reference of our test data contains only one chromesome, Mapsplice can't distinguish this, so users should choose other kinds of software except for Mapsplice to run test data. 
 
 Here, we will exhibit step by step the usage of circPipe using our test
 data in a linux system as an example.

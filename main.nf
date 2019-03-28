@@ -67,8 +67,7 @@ def helpMessage() {
       --gtffile/--bedfile/
       --annotationfile              Different annotation files from GENCODE database for annotating circRNAs. 
                                     e.g. [gencode.v25.annotation.gtf]/[gencode.v25.annotation.bed]/[hg38_gencode.txt]
-      --ciridir/--find_circdir/
-      --mapsdir/--knifedir          Home folder of ciri/find_circ/mapsplice/knife installed location
+      --knifedir                    Home folder of ciri/find_circ/mapsplice/knife installed location
 
     Options:
       -profile                      Configuration profile to use. Can use multiple (comma separated)
@@ -201,6 +200,13 @@ if(params.mRNA){
     if( !mRNA.exists() ) exit 1, print_red("Missing mRNA expression file: ${mRNA}")
 
 }
+
+custom_runName = params.name
+if( !(workflow.runName ==~ /[a-z]+_[a-z]+/) ){
+  custom_runName = workflow.runName
+}
+
+ch_multiqc_config = Channel.fromPath(params.multiqc_config)
 
 
 /*
@@ -809,6 +815,7 @@ process Bwa{
 
     output:
     set pair_id, file ('*.sam') into bwafiles
+    file ('*.txt') into bwa_multiqc
 
     when:
     params.ciri
@@ -824,6 +831,10 @@ process Bwa{
         ${index}/genome \
         ${query_file} \
         > bwa_${pair_id}.mem.sam
+
+        samtools view -bS bwa_${pair_id}.mem.sam > bwa_${pair_id}.bam
+        samtools stats bwa_${pair_id}.bam > stats_${pair_id}.txt
+        samtools flagstat bwa_${pair_id}.bam > flagstat_${pair_id}.txt
         """
     }else{
         """
@@ -834,6 +845,10 @@ process Bwa{
         ${index}/genome \
         ${query_file[0]} ${query_file[1]} \
         > bwa_${pair_id}.mem.sam
+
+        samtools view -bS bwa_${pair_id}.mem.sam > bwa_${pair_id}.bam
+        samtools stats bwa_${pair_id}.bam > stats_${pair_id}.txt
+        samtools flagstat bwa_${pair_id}.bam > flagstat_${pair_id}.txt
         """
     }
 
@@ -2048,21 +2063,24 @@ process Knife_Cor{
 
 /*
 ========================================================================================
-                    run the multiqc (merge the results of fastp and star)
+                    run the multiqc (merge the results of fastp, bwa and star)
 ========================================================================================
 */
 process Multiqc{
     publishDir "${params.outdir}/MultiQC", mode: 'copy', pattern: "*.html", overwrite: true
 
     input:
-    file (query_file) from fastp_for_multiqc.concat( star_multiqc, bowtie2_multiqc ).collect()
+    file (query_file) from fastp_for_multiqc.concat( star_multiqc, bowtie2_multiqc, bwa_multiqc ).collect()
+    file multiqc_config from ch_multiqc_config
 
     output:
     file ('*.html') into multiqc_results
 
     script:
+    rtitle = custom_runName ? "--title \"$custom_runName\"" + "_circPipe" : ''
+    rfilename = custom_runName ? "--filename " + custom_runName.replaceAll('\\W','_').replaceAll('_+','_') + "_circPipe_multiqc_report" : ''
     """
-    multiqc .
+    multiqc . -f $rtitle $rfilename --config $multiqc_config
     """
 }
 

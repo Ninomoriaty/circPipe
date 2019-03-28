@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97f622c0-e92b-41f3-b6b3-593fa16aaaba" name="Default" comment="add multiqc">
+    <list default="true" id="97f622c0-e92b-41f3-b6b3-593fa16aaaba" name="Default" comment="change knife">
+      <change afterPath="$PROJECT_DIR$/assets/multiqc_config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install_conda_package.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install_conda_package.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.nf" beforeDir="false" afterPath="$PROJECT_DIR$/main.nf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextflow.config" beforeDir="false" afterPath="$PROJECT_DIR$/nextflow.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/Build_Index_Manually.sh" beforeDir="false" afterPath="$PROJECT_DIR$/utils/Build_Index_Manually.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,20 +18,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.nf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="470" column="18" selection-start-line="470" selection-start-column="10" selection-end-line="470" selection-end-column="18" />
+            <state relative-caret-position="479">
+              <caret line="2082" column="14" selection-start-line="2082" selection-start-column="14" selection-end-line="2082" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/multiqc_config.yaml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install_conda_package.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/Build_Index_Manually.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2076">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+            <state relative-caret-position="90">
+              <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -35,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nextflow.config">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="49" column="66" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="66" />
+            <state relative-caret-position="456">
+              <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -48,10 +66,14 @@
       <find>output_docs</find>
       <find>=====</find>
       <find>conda</find>
-      <find>bwa</find>
       <find>bowtie2</find>
       <find>segemehl</find>
       <find>INDEX_MODE_ID</find>
+      <find>star</find>
+      <find>knife</find>
+      <find>knifedir</find>
+      <find>bwa</find>
+      <find>multiqc</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -80,13 +102,14 @@
         <option value="$PROJECT_DIR$/bin/circRNA_feature.R" />
         <option value="$PROJECT_DIR$/install_tools_manually.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
-        <option value="$PROJECT_DIR$/install_conda_package.sh" />
         <option value="$PROJECT_DIR$/environment.yml" />
-        <option value="$PROJECT_DIR$/nextflow.config" />
         <option value="$PROJECT_DIR$/utils/Make_Bowtie2_Index.sh" />
         <option value="$PROJECT_DIR$/utils/Make_STAR_Index.sh" />
-        <option value="$PROJECT_DIR$/main.nf" />
         <option value="$PROJECT_DIR$/utils/Build_Index_Manually.sh" />
+        <option value="$PROJECT_DIR$/install_conda_package.sh" />
+        <option value="$PROJECT_DIR$/assets/multiqc_config.yaml" />
+        <option value="$PROJECT_DIR$/nextflow.config" />
+        <option value="$PROJECT_DIR$/main.nf" />
       </list>
     </option>
   </component>
@@ -113,6 +136,11 @@
             <path>
               <item name="circPipe" type="b2602c69:ProjectViewProjectNode" />
               <item name="circPipe" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="circPipe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="circPipe" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -123,7 +151,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/cirPipe/environment.yml&#10;genome&#9;FILE&#9;file://D:/cirPipe/docs/configuration/reference_genomes.md" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552630070688" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553740279406" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
@@ -570,14 +598,28 @@
       <option name="project" value="LOCAL" />
       <updated>1552628815559</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="add knife index build">
+      <created>1552904284783</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1552904284783</updated>
+    </task>
+    <task id="LOCAL-00038" summary="change knife">
+      <created>1552917914645</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1552917914645</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11353944" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11353944" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -695,8 +737,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add the environment.(except CIRI and find_circ)" />
-    <MESSAGE value="add multiqc and change the params." />
     <MESSAGE value="add singleEnd mode." />
     <MESSAGE value="some bugs with draw_plot" />
     <MESSAGE value="environment" />
@@ -720,10 +760,11 @@
     <MESSAGE value="add star-multiqc" />
     <MESSAGE value="build index manually" />
     <MESSAGE value="add multiqc" />
-    <option name="LAST_COMMIT_MESSAGE" value="add multiqc" />
+    <MESSAGE value="add knife index build" />
+    <MESSAGE value="change knife" />
+    <option name="LAST_COMMIT_MESSAGE" value="change knife" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/脚本/RNAseq-master/total_matrix.txt" />
     <entry file="file://$PROJECT_DIR$/otherTools/changematrix.R" />
     <entry file="file://$USER_HOME$/Desktop/脚本/RNAseq-master/final.matrix" />
     <entry file="file://$PROJECT_DIR$/otherTools/edgeR_circ.R" />
@@ -906,13 +947,6 @@
         <state relative-caret-position="-627" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install_conda_package.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/install_tools_manually.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -921,24 +955,34 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/Make_Bowtie2_Index.sh" />
+    <entry file="file://$PROJECT_DIR$/utils/Build_Index_Manually.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install_conda_package.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/multiqc_config.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/nextflow.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="66" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="66" />
+        <state relative-caret-position="456">
+          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.nf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="470" column="18" selection-start-line="470" selection-start-column="10" selection-end-line="470" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/Build_Index_Manually.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2076">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state relative-caret-position="479">
+          <caret line="2082" column="14" selection-start-line="2082" selection-start-column="14" selection-end-line="2082" selection-end-column="14" />
         </state>
       </provider>
     </entry>

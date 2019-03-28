@@ -153,7 +153,7 @@ Build necesssary Index
 As to build the different indexes, you can simply download from
 `igenome <https://support.illumina.com/sequencing/sequencing_software/igenome.html>`__,
 or using your own genome file and annotation file with the command lines
-introduced in ``Parameters`` section. Or you can just ignore the steps
+introduced in ``Parameters`` section. If you want to use hg19 as gene annotation file for circexplorer2, you should download the genome reference following the command ``fetch_ucsc.py hg19 ens hg19_ens.txt``.Or you can just ignore the steps
 because circpipe will build the indexes automatically except knife. 
 
 .. note:: Download KNIFE If you want to use knife, you can download the package

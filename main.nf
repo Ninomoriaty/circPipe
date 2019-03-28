@@ -1833,7 +1833,7 @@ process Find_circ_Report{
     params.find_circ && params.separate
 
     output:
-    file ('*.html') into report_html
+    file ('*.html') into report_html_find_circ
 
     shell:
     '''

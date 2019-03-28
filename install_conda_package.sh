@@ -38,3 +38,4 @@ conda install --yes biopython=1.72
 conda install --yes bcbiogff=0.6.4
 conda install --yes r-markdown=0.9
 conda install --yes scipy=1.2.0
+conda install --yes unzip=6.0

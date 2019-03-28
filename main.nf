@@ -42,8 +42,7 @@ def helpMessage() {
       --gtffile/
       --annotationfile              Different annotation files from GENCODE database for annotating circRNAs. 
                                     e.g. [gencode.v25.annotation.gtf]/[gencode.v25.annotation.bed]/[hg38_gencode.txt]
-      --ciridir/--find_circdir/
-      --mapsdir/--knifedir          Home folder of ciri/find_circ/mapsplice/knife installed location
+      --knifedir                    Home folder of ciri/find_circ/mapsplice/knife installed location
 
     Options:
       -profile                      Configuration profile to use. Can use multiple (comma separated)
@@ -155,6 +154,13 @@ if(params.mRNA){
     if( !mRNAfile.exists() ) exit 1, LikeletUtils.print_red("Missing mRNA expression file: ${mRNAfile}")
 
 }
+
+custom_runName = params.name
+if( !(workflow.runName ==~ /[a-z]+_[a-z]+/) ){
+  custom_runName = workflow.runName
+}
+
+ch_multiqc_config = Channel.fromPath(params.multiqc_config)
 
 
 /*
@@ -823,10 +829,50 @@ if(run_ciri){
         file index from bwaindex.collect()
         file genomefile
 
+<<<<<<< refs/remotes/origin/zhaoqi
+=======
+    output:
+    set pair_id, file ('*.sam') into bwafiles
+    file ('*.txt') into bwa_multiqc
+>>>>>>> change some bugs
 
         output:
         set pair_id, file ('*.sam') into bwafiles
 
+<<<<<<< refs/remotes/origin/zhaoqi
+=======
+    shell:
+    if(params.singleEnd){
+        """
+        bwa \
+        mem -t ${task.cpus} \
+        -k 15 \
+        -T 19  -M -R \
+        "@RG\\tID:fastp_${pair_id}\\tPL:PGM\\tLB:noLB\\tSM:fastp_${pair_id}" \
+        ${index}/genome \
+        ${query_file} \
+        > bwa_${pair_id}.mem.sam
+
+        samtools view -bS bwa_${pair_id}.mem.sam > bwa_${pair_id}.bam
+        samtools stats bwa_${pair_id}.bam > stats_${pair_id}.txt
+        samtools flagstat bwa_${pair_id}.bam > flagstat_${pair_id}.txt
+        """
+    }else{
+        """
+        bwa \
+        mem -t ${task.cpus} \
+        -T 19 -M -R \
+        "@RG\\tID:fastp_${pair_id}\\tPL:PGM\\tLB:noLB\\tSM:fastp_${pair_id}" \
+        ${index}/genome \
+        ${query_file[0]} ${query_file[1]} \
+        > bwa_${pair_id}.mem.sam
+
+        samtools view -bS bwa_${pair_id}.mem.sam > bwa_${pair_id}.bam
+        samtools stats bwa_${pair_id}.bam > stats_${pair_id}.txt
+        samtools flagstat bwa_${pair_id}.bam > flagstat_${pair_id}.txt
+        """
+    }
+>>>>>>> change some bugs
 
         shell:
         
@@ -1921,21 +1967,28 @@ if(run_knife){
 
 /*
 ========================================================================================
-                    run the multiqc (merge the results of fastp and star)
+                    run the multiqc (merge the results of fastp, bwa and star)
 ========================================================================================
 */
 process Multiqc{
     publishDir "${params.outdir}/MultiQC", mode: 'copy', pattern: "*.html", overwrite: true
 
     input:
+<<<<<<< refs/remotes/origin/zhaoqi
     file (query_file) from Fastp_for_multiqc.concat( Star_multiqc, Bowtie2_multiqc ).collect()
+=======
+    file (query_file) from fastp_for_multiqc.concat( star_multiqc, bowtie2_multiqc, bwa_multiqc ).collect()
+    file multiqc_config from ch_multiqc_config
+>>>>>>> change some bugs
 
     output:
     file ('*.html') into Multiqc_results
 
     script:
+    rtitle = custom_runName ? "--title \"$custom_runName\"" + "_circPipe" : ''
+    rfilename = custom_runName ? "--filename " + custom_runName.replaceAll('\\W','_').replaceAll('_+','_') + "_circPipe_multiqc_report" : ''
     """
-    multiqc .
+    multiqc . -f $rtitle $rfilename --config $multiqc_config
     """
 }
 

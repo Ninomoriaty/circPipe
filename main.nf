@@ -1769,6 +1769,8 @@ process Find_circ_Report{
     input:
     file (de_file) from end_find_circ.collect()
     file (cor_file) from cor_plot_find_circ.collect()
+    file (calculate_file) from tools_merge_findcirc
+    file ('*.html') into multiqc_results_findcirc
     file otherTools
     file Rscriptpath
 
@@ -2010,7 +2012,12 @@ process Multiqc{
 >>>>>>> change some bugs
 
     output:
+<<<<<<< refs/remotes/origin/zhaoqi
     file ('*.html') into Multiqc_results
+=======
+    file ('*.html') into multiqc_results
+    file ('*.html') into multiqc_results_findcirc
+>>>>>>> change some bugs
 
     script:
     rtitle = custom_runName ? "--title \"$custom_runName\"" + "_circPipe" : ''
@@ -2041,9 +2048,22 @@ if(number_of_tools==1){
     CorPlotMerge=Channel.empty()
     Tools_merge_html=Channel.empty()
 
+<<<<<<< refs/remotes/origin/zhaoqi
 }else{
     Combine_matrix_file= Merge_find_circ.concat( Merge_circexplorer2, Merge_ciri, Merge_mapsplice, Merge_segemehl, Merge_knife )
     Combine_name_file=Name_find_circ.concat( Name_circexplorer2, Name_ciri, Name_mapsplice, Name_segemehl, Name_knife )
+=======
+    output:
+    file ('all_tools_merge.matrix') into tools_merge
+    file ('all_tools_merge.matrix') into tools_merge_html
+    file ('all_tools_merge.matrix') from tools_merge_findcirc
+    file ('for_annotation.bed') into bed_for_annotation
+    file ('for_annotation.bed') into bed_for_recount
+    file ('for_annotation.bed') into bed_for_merge
+    file ('*annote.txt') into de_merge
+    file ('*annote.txt') into cor_merge
+    file ('all_tools_intersect.matrix') into tools_intersect
+>>>>>>> change some bugs
 
 
 

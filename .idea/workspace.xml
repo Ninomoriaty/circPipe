@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.nf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="1829" column="24" selection-start-line="1829" selection-start-column="24" selection-end-line="1829" selection-end-column="24" />
+            <state relative-caret-position="1026">
+              <caret line="2428" lean-forward="true" selection-start-line="2428" selection-end-line="2428" />
             </state>
           </provider>
         </entry>
@@ -98,6 +98,8 @@
       <find>plot_merge_cor</find>
       <find>CoxTest$p.value</find>
       <find>multiqc_results</find>
+      <find>tools_merge_</find>
+      <find>tools_merge_findcirc</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -170,7 +172,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/cirPipe/environment.yml&#10;genome&#9;FILE&#9;file://D:/cirPipe/docs/configuration/reference_genomes.md" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553852900520" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553853567493" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
@@ -673,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553852704449</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="change some bugs">
+      <created>1553852906777</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1553852906777</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1057,8 +1066,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.nf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="1829" column="24" selection-start-line="1829" selection-start-column="24" selection-end-line="1829" selection-end-column="24" />
+        <state relative-caret-position="1026">
+          <caret line="2428" lean-forward="true" selection-start-line="2428" selection-end-line="2428" />
         </state>
       </provider>
     </entry>

@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.nf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3365">
-              <caret line="1984" column="39" lean-forward="true" selection-start-line="1984" selection-start-column="39" selection-end-line="1984" selection-end-column="39" />
+            <state relative-caret-position="572">
+              <caret line="2137" column="40" selection-start-line="2137" selection-start-column="40" selection-end-line="2137" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -170,7 +170,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/cirPipe/environment.yml&#10;genome&#9;FILE&#9;file://D:/cirPipe/docs/configuration/reference_genomes.md" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553852520657" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553852694577" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
@@ -659,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553843325838</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="change some bugs">
+      <created>1553852528653</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1553852528653</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1043,8 +1050,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.nf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3365">
-          <caret line="1984" column="39" lean-forward="true" selection-start-line="1984" selection-start-column="39" selection-end-line="1984" selection-end-column="39" />
+        <state relative-caret-position="572">
+          <caret line="2137" column="40" selection-start-line="2137" selection-start-column="40" selection-end-line="2137" selection-end-column="40" />
         </state>
       </provider>
     </entry>

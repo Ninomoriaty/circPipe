@@ -1826,6 +1826,8 @@ process Find_circ_Report{
     input:
     file (de_file) from end_find_circ.collect()
     file (cor_file) from cor_plot_find_circ.collect()
+    file (calculate_file) from tools_merge_findcirc
+    file ('*.html') into multiqc_results_findcirc
     file otherTools
     file Rscriptpath
 
@@ -2103,6 +2105,7 @@ process Multiqc{
 
     output:
     file ('*.html') into multiqc_results
+    file ('*.html') into multiqc_results_findcirc
 
     script:
     rtitle = custom_runName ? "--title \"$custom_runName\"" + "_circPipe" : ''
@@ -2132,6 +2135,7 @@ process Tools_Merge{
     output:
     file ('all_tools_merge.matrix') into tools_merge
     file ('all_tools_merge.matrix') into tools_merge_html
+    file ('all_tools_merge.matrix') from tools_merge_findcirc
     file ('for_annotation.bed') into bed_for_annotation
     file ('for_annotation.bed') into bed_for_recount
     file ('for_annotation.bed') into bed_for_merge

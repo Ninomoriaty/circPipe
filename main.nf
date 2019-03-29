@@ -1827,7 +1827,7 @@ process Find_circ_Report{
     file (de_file) from end_find_circ.collect()
     file (cor_file) from cor_plot_find_circ.collect()
     file (calculate_file) from tools_merge_findcirc
-    file ('*.html') into multiqc_results_findcirc
+    file ('*.html') from multiqc_results_findcirc
     file otherTools
     file Rscriptpath
 

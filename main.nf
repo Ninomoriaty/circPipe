@@ -2056,7 +2056,7 @@ if(number_of_tools==1){
     output:
     file ('all_tools_merge.matrix') into tools_merge
     file ('all_tools_merge.matrix') into tools_merge_html
-    file ('all_tools_merge.matrix') from tools_merge_findcirc
+    file ('all_tools_merge.matrix') into tools_merge_findcirc
     file ('for_annotation.bed') into bed_for_annotation
     file ('for_annotation.bed') into bed_for_recount
     file ('for_annotation.bed') into bed_for_merge

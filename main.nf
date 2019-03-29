@@ -1814,35 +1814,6 @@ process Find_circ_Cor{
     '''
 }
 
-/*
-========================================================================================
-                                after running the tools
-                                     produce report
-========================================================================================
-*/
-process Find_circ_Report{
-    publishDir "${params.outdir}/Test_Report", mode: 'copy', pattern: "*.html", overwrite: true
-
-    input:
-    file (de_file) from end_find_circ.collect()
-    file (cor_file) from cor_plot_find_circ.collect()
-    file (calculate_file) from tools_merge_findcirc
-    file ('*.html') from multiqc_results_findcirc
-    file otherTools
-    file Rscriptpath
-
-    when:
-    params.find_circ && params.separate
-
-    output:
-    file ('*.html') into report_html_find_circ
-
-    shell:
-    '''
-    cp !{otherTools}/*.Rmd ./
-    !{Rscriptpath}/bin/Rscript -e "require( 'rmarkdown' ); render('report.Rmd', 'html_document')"
-    '''
-}
 
 
 /*
@@ -2417,6 +2388,37 @@ process Report_production{
 
     output:
     file ('*.html') into report_html
+
+    shell:
+    '''
+    cp !{otherTools}/*.Rmd ./
+    !{Rscriptpath}/bin/Rscript -e "require( 'rmarkdown' ); render('report.Rmd', 'html_document')"
+    '''
+}
+
+
+/*
+========================================================================================
+                                after running the tools
+                                     produce report
+========================================================================================
+*/
+process Find_circ_Report{
+    publishDir "${params.outdir}/Test_Report", mode: 'copy', pattern: "*.html", overwrite: true
+
+    input:
+    file (de_file) from end_find_circ.collect()
+    file (cor_file) from cor_plot_find_circ.collect()
+    file (calculate_file) from tools_merge_findcirc
+    file ('*.html') from multiqc_results_findcirc
+    file otherTools
+    file Rscriptpath
+
+    when:
+    params.find_circ && params.separate
+
+    output:
+    file ('*.html') into report_html_find_circ
 
     shell:
     '''

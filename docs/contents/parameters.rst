@@ -163,6 +163,10 @@ Detailed instruction of parameters
 
    path to the result output directory
 
+-  `` --skip_fastp``
+
+   run circPipe without the step of QC,which is suit for QC-ready reads.
+   
 -  ``--selectTools``
 
    specify which tools should be use. ``1`` for circexplorer2, ``2`` for

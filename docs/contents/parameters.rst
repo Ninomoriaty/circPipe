@@ -103,18 +103,6 @@ Optional
 |              |                 | the reads are  |
 |              |                 | single ended   |
 +--------------+-----------------+----------------+
-| --merge      | ``true``        | merge the      |
-|              |                 | different      |
-|              |                 | matrixes       |
-|              |                 | produce by     |
-|              |                 | different      |
-|              |                 | tools and draw |
-|              |                 | the venn graph |
-+--------------+-----------------+----------------+
-| --separate   | ``false``       | annotate the   |
-|              |                 | results        |
-|              |                 | separately     |
-+--------------+-----------------+----------------+
 | --selectTool | ``1``           | specify which  |
 | s            |                 | tools should   |
 |              |                 | be use. ``1``  |
@@ -253,16 +241,6 @@ Detailed instruction of parameters
 -  ``--singleEnd``
 
    ``true`` when using a single End reads input, default ``false``
-
--  ``--separate``
-
-   ``true`` when each selected pipelines producing its own results,
-   default ``false``
-
--  ``--merge``
-
-   ``true`` when all results produced by selected pipelines merge
-   together, default ``true``
 
 -  ``--ciridir``
 

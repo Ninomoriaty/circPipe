@@ -160,6 +160,14 @@ if( !(workflow.runName ==~ /[a-z]+_[a-z]+/) ){
   custom_runName = workflow.runName
 }
 
+<<<<<<< HEAD
+=======
+custom_runName = params.name
+if( !(workflow.runName ==~ /[a-z]+_[a-z]+/) ){
+  custom_runName = workflow.runName
+}
+
+>>>>>>> master
 ch_multiqc_config = Channel.fromPath(params.multiqc_config)
 
 
@@ -834,7 +842,10 @@ if(run_ciri){
     output:
     set pair_id, file ('*.sam') into bwafiles
     file ('*.txt') into bwa_multiqc
+<<<<<<< HEAD
 >>>>>>> change some bugs
+=======
+>>>>>>> master
 
         output:
         set pair_id, file ('*.sam') into bwafiles
@@ -1769,8 +1780,21 @@ if(run_knife){
 
 
 
+<<<<<<< HEAD
         output:
         set pair_id, file ('*.txt') into knifefiles
+=======
+
+/*
+========================================================================================
+                              the sixth tool : knife
+                                   run the knife
+========================================================================================
+*/
+process Knife{
+    tag "$pair_id"
+    publishDir "${params.outdir}/circRNA_Identification/KNIFE", mode: 'copy', overwrite: true
+>>>>>>> master
 
 
         shell:
@@ -1975,12 +1999,17 @@ process Multiqc{
     publishDir "${params.outdir}/MultiQC", mode: 'copy', pattern: "*.html", overwrite: true
 
     input:
+<<<<<<< HEAD
 <<<<<<< refs/remotes/origin/zhaoqi
     file (query_file) from Fastp_for_multiqc.concat( Star_multiqc, Bowtie2_multiqc ).collect()
 =======
     file (query_file) from fastp_for_multiqc.concat( star_multiqc, bowtie2_multiqc, bwa_multiqc ).collect()
     file multiqc_config from ch_multiqc_config
 >>>>>>> change some bugs
+=======
+    file (query_file) from fastp_for_multiqc.concat( star_multiqc, bowtie2_multiqc, bwa_multiqc ).collect()
+    file multiqc_config from ch_multiqc_config
+>>>>>>> master
 
     output:
 <<<<<<< refs/remotes/origin/zhaoqi
@@ -1988,7 +2017,10 @@ process Multiqc{
 =======
     file ('*.html') into multiqc_results
     file ('*.html') into multiqc_results_findcirc
+<<<<<<< HEAD
 >>>>>>> change some bugs
+=======
+>>>>>>> master
 
     script:
     rtitle = custom_runName ? "--title \"$custom_runName\"" + "_circPipe" : ''
@@ -2341,6 +2373,37 @@ process Report_production{
     '''
     ln -s !{baseDir}/bin/*.Rmd ./
     Rscript -e "require( 'rmarkdown' ); render('report.Rmd', 'html_document')"
+    '''
+}
+
+
+/*
+========================================================================================
+                                after running the tools
+                                     produce report
+========================================================================================
+*/
+process Find_circ_Report{
+    publishDir "${params.outdir}/Test_Report", mode: 'copy', pattern: "*.html", overwrite: true
+
+    input:
+    file (de_file) from end_find_circ.collect()
+    file (cor_file) from cor_plot_find_circ.collect()
+    file (calculate_file) from tools_merge_findcirc
+    file ('*.html') from multiqc_results_findcirc
+    file otherTools
+    file Rscriptpath
+
+    when:
+    params.find_circ && params.separate
+
+    output:
+    file ('*.html') into report_html_find_circ
+
+    shell:
+    '''
+    cp !{otherTools}/*.Rmd ./
+    !{Rscriptpath}/bin/Rscript -e "require( 'rmarkdown' ); render('report.Rmd', 'html_document')"
     '''
 }
 

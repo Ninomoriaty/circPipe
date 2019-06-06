@@ -18,7 +18,7 @@ RUN wget http://sourceforge.net/projects/ciri/files/CIRI-full/CIRI-full_v2.0.zip
     echo "export PATH=\"$(pwd)/CIRI/bin/CIRI_v2.0.6:\$PATH\"" >> ~/.bashrc && \
     . ~/.bashrc
 
-ENV PATH $(pwd)/CIRI/bin/CIRI_v2.0.6:$PATH
+ENV PATH /CIRI/bin/CIRI_v2.0.6:$PATH
 
 #install find_circ
 RUN git clone http://github.com/marvin-jens/find_circ.git && \
@@ -30,7 +30,7 @@ RUN git clone http://github.com/marvin-jens/find_circ.git && \
     echo "export PATH=\"$(pwd)/find_circ:\$PATH\"" >> ~/.bashrc && \
     . ~/.bashrc
 
-ENV PATH $(pwd)/find_circ:$PATH
+ENV PATH /find_circ:$PATH
 
 RUN echo "source activate nf-core-cirpipe-1.0dev" >> ~/.bashrc
 

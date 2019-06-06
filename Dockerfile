@@ -32,5 +32,6 @@ RUN git clone http://github.com/marvin-jens/find_circ.git && \
 
 ENV PATH $(pwd)/find_circ:$PATH
 
+RUN echo "source activate nf-core-cirpipe-1.0dev" >> ~/.bashrc
 
-#sed -i 's/python/python2.7/g' ./find_circ/unmapped2anchors.py
+

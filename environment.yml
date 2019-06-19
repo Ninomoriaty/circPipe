@@ -45,3 +45,4 @@ dependencies:
   - hisat2=2.1.0
   - htseq=0.11.2
   - unzip=6.0
+  - r-ggpubr=0.2

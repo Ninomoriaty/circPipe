@@ -42,7 +42,7 @@ Configuration
 ^^^^^^^^^^^^^
 
     (paths to references, softwares and special environments. Only need
-    to be set at the first time you run the pipeline.We recommanded users to build a fixed config profile based on their own service,    for instance, named ``C2.config``, and use the paratemeter ``--profile C2.config`` to invoke these parameters.) .
+    to be set at the first time you run the pipeline.We recommanded users to build a fixed config profile or edit our ``base.config`` based on their own service, and use the paratemeter ``--profile *.config`` to invoke these parameters.) .
 
 +--------------+-----------------+----------------+
 | Name         | Example/Default | Description    |
@@ -84,7 +84,7 @@ Configuration
 
 Optional
 ^^^^^^^^
-
+The following parameters may vary from projects to projects, therefore we recommanded users to add these parameters in the command line, which may be more flexible.
 +--------------+-----------------+----------------+
 | Name         | Default value   | Description    |
 +==============+=================+================+
@@ -141,7 +141,6 @@ Optional
 
 Detailed instruction of parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following parameters may vary from projects to projects, therefore we recommanded users to add these parameters in the command line, which may be more flexible.
 
 -  ``--reads``
 

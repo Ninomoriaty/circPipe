@@ -83,7 +83,7 @@ paths to references, softwares and special environments. Only need to be set at 
 
 Optional
 ^^^^^^^^
-The following parameters may vary from projects to projects, therefore we recommanded users to add these parameters in the command line, which may be more flexible.
+The following parameters may vary from projects to projects, therefore we recommanded users to add these parameters into the command line, which may be more flexible.
 
 +--------------+-----------------+----------------+
 | Name         | Default value   | Description    |
@@ -265,7 +265,7 @@ Detailed instruction of parameters
 Configure profiles 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As a nextflow-based analysis pipeline, CircPipe allow users edit configure file ``nextflow.config`` to set the index files and default file path parameters, and use the ``--profile nextflow.config`` instead of typing them into the command line.
+As a nextflow-based analysis pipeline, CircPipe allow users edit configure file ``nextflow.config`` to set the index files and default file path parameters, they can also build a new config based on their own service in advance, added it to ``profile`` part and use the ``-profile`` paremeter instead of typing them into the command line.
 
 To configure, please go to ``params`` line, and set the following information of various file locations and system environment settings
 

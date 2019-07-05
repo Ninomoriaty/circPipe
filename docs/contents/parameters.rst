@@ -141,6 +141,7 @@ Optional
 
 Detailed instruction of parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following parameters may vary from projects to projects, therefore we recommanded users to add these parameters in the command line, which may be more flexible.
 
 -  ``--reads``
 

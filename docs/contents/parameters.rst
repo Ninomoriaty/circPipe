@@ -40,7 +40,7 @@ Mandatory
 
 Configuration
 ^^^^^^^^^^^^^
-paths to references, softwares and special environments. Only need to be set at the first time you run the pipeline.We recommanded users to build a fixed config containing the following parameters and added this config into ``profiles`` part of the ``nextflow.config`` based on their own service, and use the paratemeter ``-profile`` followed with the profile name, for instance, if you want to use a config file named "awsbatch", you can added it into ``profiles`` and add ``-profile awsbatch`` into the command line and invoke these parameters.
+paths to references, softwares and special environments. Only need to be set at the first time you run the pipeline.We recommanded users to build a fixed config containing the following parameters and added this config into ``profiles`` part of the ``nextflow.config`` based on their own service, and use the paratemeter ``-profile`` followed with the profile name, for instance, if you want to use a config file named "awsbatch", you can added it into ``profiles`` , then add ``-profile awsbatch`` into the command line and invoke these parameters.
 
 
 +--------------+-----------------+----------------+

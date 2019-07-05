@@ -44,6 +44,7 @@ Configuration
     (paths to references, softwares and special environments. Only need
     to be set at the first time you run the pipeline.We recommanded users to build a fixed config profile or edit our ``nextflow.config`` based on their own service, and use the paratemeter ``--profile nextflow.config`` to invoke these parameters.) .
 
+
 +--------------+-----------------+----------------+
 | Name         | Example/Default | Description    |
 |              | value           |                |

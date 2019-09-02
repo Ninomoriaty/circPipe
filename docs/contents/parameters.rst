@@ -40,9 +40,8 @@ Mandatory
 
 Configuration
 ^^^^^^^^^^^^^
+paths to references, softwares and special environments. Only need to be set at the first time you run the pipeline.We recommanded users to build a fixed config containing the following parameters and added this config into ``profiles`` part of the ``nextflow.config`` based on their own service, and use the paratemeter ``-profile`` followed with the profile name, for instance, if you want to use a config file named "awsbatch", you can added it into ``profiles`` , then add ``-profile awsbatch`` into the command line and invoke these parameters.
 
-    (paths to references, softwares and special environments. Only need
-    to be set at the first time you run the pipeline) .
 
 +--------------+-----------------+----------------+
 | Name         | Example/Default | Description    |
@@ -84,6 +83,7 @@ Configuration
 
 Optional
 ^^^^^^^^
+The following parameters may vary from projects to projects, therefore we recommanded users to add these parameters into the command line, which may be more flexible.
 
 +--------------+-----------------+----------------+
 | Name         | Default value   | Description    |
@@ -265,7 +265,7 @@ Detailed instruction of parameters
 Configure profiles 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As a nextflow-based analysis pipeline, CircPipe allow users edit configure file ``nextflow.config`` to set the index files and default file path parameters instead of typing them into the command line.
+As a nextflow-based analysis pipeline, CircPipe allow users edit configure file ``nextflow.config`` to set the index files and default file path parameters, they can also build a new config based on their own service in advance, added it to ``profile`` part and use the ``-profile`` paremeter instead of typing them into the command line.
 
 To configure, please go to ``params`` line, and set the following information of various file locations and system environment settings
 

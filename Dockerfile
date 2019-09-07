@@ -3,7 +3,7 @@ LABEL description="Docker image containing all requirements for nf-core/circpipe
 
 COPY environment.yml ./
 
-RUN conda create -n mapsplice -c bioconda/label/cf201901 mapsplice
+RUN conda create -n mapsplice -c bioconda mapsplice=2.2.1
 
 ENV PATH /opt/conda/bin:$PATH
 ENV PATH /opt/conda/envs/mapsplice/bin:$PATH

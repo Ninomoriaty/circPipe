@@ -5,7 +5,7 @@ COPY environment.yml ./
 
 RUN conda env create -f /environment.yml && conda clean -a
 
-RUN conda create -n mapsplice mapsplice=
+RUN conda create -n mapsplice mapsplice=2.2.1
 
 ENV PATH /opt/conda/bin:$PATH
 ENV PATH /opt/conda/envs/nf-core-cirpipe-1.0dev/bin:$PATH

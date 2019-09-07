@@ -10,7 +10,6 @@ dependencies:
   - perl=5.26.2
   - numpy=1.15.2
   - segemehl=0.3.4
-  - mapsplice=2.2.1
   - bwa=0.7.17
   - nextflow=0.32.0
   - graphviz=2.38.0
